@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import zhCN from 'antd/lib/locale/zh_CN';
+import { ConfigProvider } from 'antd';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import configStore from './store';
+
+const store = configStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <ConfigProvider locale={zhCN}>
+      <App />
+      </ConfigProvider>
+    </Provider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
