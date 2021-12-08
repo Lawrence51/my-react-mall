@@ -1,0 +1,14 @@
+.mall-header {
+  height: 100px;
+  background: #ffffff;
+  box-shadow: 0px 0px 6px 0px rgba(206, 203, 203, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mall-header-container {
+    width: 1200px;
+    display: flex;
+    align-items: center;
+  }
+}

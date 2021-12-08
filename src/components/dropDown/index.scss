@@ -1,0 +1,43 @@
+.mall-dropdown-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 22px;
+
+  & .shop-menu {
+    padding-right: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 183px;
+    padding-left: 20px;
+
+    & .name {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding-right: 4px;
+    }
+
+    & .icon {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  & .cart-menu {
+    display: flex;
+    cursor: pointer;
+
+    & .name {
+      padding-left: 6px;
+    }
+  }
+}
