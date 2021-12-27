@@ -81,7 +81,7 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "start": "export REACT_APP_ENV=fat HTTPS=true; node scripts/start.js",
+    "start": "export REACT_APP_ENV=fat; node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },

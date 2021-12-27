@@ -1,12 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { unstable_batchedUpdates } from "react-dom";
 import styles from './index.module.scss';
+import { Button } from 'antd';
 
 
 const HomePage = (props: any) => {
-
+  const [count, setCount] = useState(0);
+  const [value, setValue] = useState(false);
   useEffect(() => {
   }, []);
+
+  function handleClick() {
+    setTimeout(() => {
+		  unstable_batchedUpdates(() => { // 性能优化 可将多次更改state合并成一个
+	      setCount((c) => c + 1); // Causes a re-render
+	      setValue((f) => !f); // Causes a re-render
+	    })
+	  }, 100)
+  }
 
   return (
     <div className={styles['home-page']}>
@@ -17,6 +29,7 @@ const HomePage = (props: any) => {
           alt="哈啰酒店banner"
         />
       </div>
+      <Button onClick={handleClick}>Next</Button>
     </div>
   );
 };
